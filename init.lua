@@ -104,6 +104,11 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+-- My own helpful mappings
+vim.keymap.set('n', 'U', ':redo<cr>', { noremap = true, silent = true })
+vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Scroll down and center cursor' })
+vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Scroll down and center cursor' })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
@@ -520,7 +525,7 @@ require('lazy').setup({
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
         -- clangd = {},
-        -- gopls = {},
+        gopls = {},
         -- pyright = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
@@ -529,9 +534,23 @@ require('lazy').setup({
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
-        -- ts_ls = {},
-        --
-
+        ts_ls = {},
+        html = { filetypes = { 'html', 'twig', 'hbs' } },
+        tailwindcss = {},
+        eslint = {},
+        jsonls = {
+          settings = {
+            json = {
+              validate = { enable = true },
+            },
+          },
+        },
+        docker_compose_language_service = {},
+        dockerls = {},
+        jdtls = {
+          filetypes = { 'kotlin', 'java' },
+          workspace = { checkThirdParty = false },
+        },
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
@@ -617,7 +636,26 @@ require('lazy').setup({
         -- python = { "isort", "black" },
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
-        -- javascript = { "prettierd", "prettier", stop_after_first = true },
+        javascript = { 'prettierd', 'prettier', stop_after_first = true },
+        -- TypeScript formatters
+        typescript = { 'prettierd', 'prettier', 'eslint_d', stop_after_first = true },
+
+        -- React (JSX/TSX) formatters
+        javascriptreact = { 'prettierd', 'prettier', 'eslint_d', stop_after_first = true },
+        typescriptreact = { 'prettierd', 'prettier', 'eslint_d', stop_after_first = true },
+
+        -- YAML formatters
+        yaml = { 'yamlfmt', 'prettierd', 'prettier', stop_after_first = true },
+
+        -- Docker Compose formatters
+        dockercompose = { 'dockerfile_lint', 'prettierd', 'prettier', stop_after_first = true },
+
+        -- Golang formatters
+        go = { 'gofmt', 'goimports' },
+
+        -- Java formatters
+        java = { 'google_java_format', 'prettier' },
+        json = { 'prettierd', 'prettier', 'jq', stop_after_first = true },
       },
     },
   },
