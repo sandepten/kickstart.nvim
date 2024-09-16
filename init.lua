@@ -655,7 +655,7 @@ require('lazy').setup({
         go = { 'gofmt', 'goimports' },
 
         -- Java formatters
-        java = { 'google_java_format', 'prettier' },
+        java = { 'google_java_format', filetypes = { 'java' } },
         json = { 'prettierd', 'prettier', 'jq', stop_after_first = true },
       },
     },
