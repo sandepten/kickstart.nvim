@@ -545,7 +545,7 @@ require('lazy').setup({
             },
           },
         },
-        svelte = {},
+        svelte = { filetypes = { 'svelte' } },
         docker_compose_language_service = {},
         dockerls = {},
         jdtls = {
