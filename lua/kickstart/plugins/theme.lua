@@ -10,17 +10,8 @@ return { -- You can easily change to a different colorscheme.
     flavour = 'mocha',
     transparent_background = true,
     no_italic = true,
-    default_integrations = true,
     integrations = {
-      cmp = true,
-      gitsigns = true,
-      nvimtree = true,
-      treesitter = true,
-      notify = true,
-      mini = {
-        enabled = true,
-        indentscope_color = '',
-      },
+      neotree = true,
     },
   },
   init = function()
