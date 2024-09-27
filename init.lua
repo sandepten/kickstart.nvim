@@ -109,6 +109,14 @@ vim.keymap.set('n', 'U', ':redo<cr>', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Scroll down and center cursor' })
 vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Scroll down and center cursor' })
 
+-- primeagen keymaps
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+
+vim.opt.wrap = true
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
