@@ -33,29 +33,22 @@ return { -- Autoformat
     formatters_by_ft = {
       lua = { 'stylua' },
       -- Conform can also run multiple formatters sequentially
-      -- python = { "isort", "black" },
       --
       -- You can use 'stop_after_first' to run the first available formatter from the list
+      python = { 'isort', 'black' },
       javascript = { 'prettierd', 'prettier', stop_after_first = true },
-      -- TypeScript formatters
       typescript = { 'prettierd', 'prettier', 'eslint_d', stop_after_first = true },
-
-      -- React (JSX/TSX) formatters
       javascriptreact = { 'prettierd', 'prettier', 'eslint_d', stop_after_first = true },
       typescriptreact = { 'prettierd', 'prettier', 'eslint_d', stop_after_first = true },
-
-      -- YAML formatters
       yaml = { 'yamlfmt', 'prettierd', 'prettier', stop_after_first = true },
-
-      -- Docker Compose formatters
       dockercompose = { 'dockerfile_lint', 'prettierd', 'prettier', stop_after_first = true },
-
-      -- Golang formatters
       go = { 'gofmt', 'goimports' },
-
-      -- Java formatters
       java = { 'google_java_format', filetypes = { 'java' } },
       json = { 'prettierd', 'prettier', 'jq', stop_after_first = true },
+      svelte = { 'prettierd', 'prettier', 'eslint_d', stop_after_first = true },
+      css = { 'prettierd', 'prettier', 'stylelint_d', stop_after_first = true },
+      html = { 'prettierd', 'prettier', 'stylelint_d', stop_after_first = true },
+      markdown = { 'prettierd', 'prettier', 'markdownlint', stop_after_first = true },
     },
   },
 }
