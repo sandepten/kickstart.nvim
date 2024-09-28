@@ -71,6 +71,10 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
+-- terminal colors
+vim.opt.termguicolors = true
+vim.opt.background = 'dark'
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
@@ -115,7 +119,7 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
-vim.opt.wrap = true
+vim.opt.wrap = false
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
